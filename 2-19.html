@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+  <style>
+    .ok {
+      font-size: 24px;
+      color: blue;
+      padding: 5px, 10px;
+      border: 2px solid red;
+    }
+
+    .ng {
+      font-size: 20px;
+      color: gray;
+    }
+  </style>
+
+  <h1>Vue.js</h1>
+  <div id="app">
+    <p v-if="flag" class="ok">
+      これは正常な表示です。
+    </p>
+    <p v-else class="ng">
+      現在、問題が発生しています。
+    </p>
+  </div>
+  <hr>
+  <button onclick="doAction();">
+    click
+  </button>
+</body>
+
+<script>
+  var data = {
+    flag: true
+  }
+
+  var app = new Vue({
+    el: '#app',
+    data: data
+  });
+
+  function doAction() {
+    data.flag = !data.flag
+  };
+
+</script>
+
+</html>
